@@ -1,27 +1,27 @@
-import React from 'react'
+import React from "react";
 
 export default function Navbar() {
   return (
-    <div>
-        <div>
-        <span>
-            <img src="" alt="" />
-            <h4>Estatery</h4>
+    <div className="navbar">
+      <div className="menu-bar">
+        <span className="logo-container">
+          <img src="/logo.png" alt="" className="logo"/>
+          <h4>Estatery</h4>
         </span>
 
         <ul>
-            <li>Rent</li>
-            <li>Buy</li>
-            <li>Sell</li>
-            <li>Manage Property</li>
-            <li>Resource</li>
+          <li>Rent</li>
+          <li>Buy</li>
+          <li>Sell</li>
+          <li>Manage Property</li>
+          <li>Resource</li>
         </ul>
+      </div>
 
-        </div>
-        <div>
-            <button>Login</button>
-            <button>Sign up</button>
-        </div>
+      <div className="auth-btns">
+        <button className="login-btn">Login</button>
+        <button className="signup-btn">Sign up</button>
+      </div>
     </div>
-  )
+  );
 }

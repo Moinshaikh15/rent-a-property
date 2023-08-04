@@ -1,1 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --primaryCol--: #7065f0;
+  --secondaryCol--: #e8e6f9;
+  --bgCol--: #f7f7fd;
+  --secondaryBgCol--: #ffffff;
+  --textCol--: #000929;
+  --secondaryTextCol--: #ffffff;
+}
 
+html {
+  font-size: 10px;
+}
+body {
+  font-family: "Inter", sans-serif;
+  font-size: 1.6rem;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: inherit;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--bgCol--);
+  padding: 100px 4vw;
+}
+
+/* Navbar */
+
+.navbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 4vw;
+  background-color: var(--secondaryBgCol--);
+}
+
+.navbar .menu-bar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+}
+.navbar .menu-bar .logo-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 4px;
+}
+.navbar .logo-container .logo {
+  width: 24px;
+}
+.navbar .logo-container h4 {
+  font-size: 1.8rem;
+}
+.navbar .menu-bar li {
+  list-style: none;
+  display: inline-block;
+  margin: 0 10px;
+  padding: 6px 10px;
+  border-radius: 5px;
+}
+.navbar .auth-btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.navbar .auth-btns button {
+  padding: 8px 12px;
+  font-size: 1.6rem;
+  border-radius: 5px;
+}
+
+.navbar .auth-btns .login-btn {
+  background-color: var(--secondaryBgCol--);
+  border: 2px solid var(--secondaryCol--);
+  color: var(--primaryCol--);
+}
+.navbar .auth-btns .signup-btn {
+  background-color: var(--primaryCol--);
+  color: var(--secondaryTextCol--);
+  border: 1px solid var(--secondaryCol--);
+}

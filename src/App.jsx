@@ -1,6 +1,6 @@
-import "./App.css";
+
 import Navbar from "./layout/Navbar";
-import Listings from "./pages/Listings";
+import Listings from "./pages/Listings/Listings";
 
 function App() {
   return (
