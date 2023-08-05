@@ -37,7 +37,7 @@ export default function PropertyCard({ property }) {
 
         {/* Address */}
         <p className="address">
-          {property.address},{property.city},{property.country}
+          {property.address}, {property.city}, {property.country}
         </p>
 
         {/*  amenities  for house or flat*/}
