@@ -6,7 +6,7 @@ const initialState = {
     filteredData: [], // Initial filtered data array
     cities: [], // Initial cities array
     filteredCities: [], // Initial filtered cities array
-    selectedCity: localStorage.getItem('selectedCity') || null,
+    selectedCity: null,
     selectedPrice: null,
     selectedDate: null,
     selectedProperty: null,
@@ -83,7 +83,7 @@ const listingsSlice = createSlice({
         setSelectedCity: (state, action) => {
 
             state.selectedCity = action.payload;
-            localStorage.setItem('selectedCity', action.payload);
+            // localStorage.setItem('selectedCity', action.payload);
         },
 
         setSelectedDates: (state, action) => {

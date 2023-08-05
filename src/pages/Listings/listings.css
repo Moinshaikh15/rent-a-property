@@ -3,18 +3,65 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  gap: 20px;
+  gap: 40px;
+  padding: 0 8vw;
+}
+
+.listings-page .heading {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.listings-page .heading button {
+  padding: 6px 12px;
+  font-size: 1.6rem;
+  border-radius: 5px;
+  color: var(--primaryCol--);
+  background-color: var(--secondaryBgCol--);
+  border: 1px solid var(--secondaryCol--);
 }
 
 .listings-page .filters {
+  width: 100%;
+  background-color: var(--secondaryBgCol--);
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 20px;
+  padding: 20px;
+  border-radius: 5px;
 }
+
 .location-input {
   position: relative;
 }
+.filters .input {
+  width: 20rem;
+  height: 50px;
+  border-right: 1px solid #e0def7;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.filters .input p {
+  color: #9b9eab;
+  font-size: 1.4rem;
+}
+.filters .location-input {
+  width: 24rem;
+}
+.filters .location-input input {
+  width: 100%;
+  padding: 5px 0;
+  border: none;
+  outline: none;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: black;
+}
+
 .cities {
   position: absolute;
   left: 0;
@@ -25,6 +72,7 @@
   justify-content: flex-start;
   align-items: flex-start;
   background-color: var(--secondaryBgCol--);
+  border-radius: 5px;
 }
 .cityCard {
   display: flex;
@@ -36,6 +84,45 @@
 }
 .cityCard .location-icon {
   width: 20px;
+}
+
+/* Hide the default arrow button */
+/* select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: "";
+} */
+
+.input select {
+
+  background-color: var(--secondaryBgCol--);
+  border: none;
+  padding: 8px 0;
+  outline: none;
+  width: 100%;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 1.6rem;
+}
+
+
+.input option {
+  font-size: 1.6rem;
+  color: #333;
+  padding: 8px;
+}
+
+.filters .search-btn {
+  width: 10rem;
+  height: 50px;
+  padding: 8px 12px;
+  font-size: 1.6rem;
+  border-radius: 5px;
+  color: var(--secondaryTextCol--);
+  background-color: var(--primaryCol--);
+  border: none;
 }
 
 .properties {
@@ -52,7 +139,7 @@
   height: 400px;
 }
 
-.property-image{
-    width: 100%;
-    height: 220px;
+.property-image {
+  width: 100%;
+  height: 220px;
 }

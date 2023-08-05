@@ -10,7 +10,7 @@ export default function Listings() {
   useEffect(() => {}, [filteredData]);
   return (
     <div className="listings-page">
-      <div>
+      <div className="heading">
         <h1>Search properties to rent</h1>
         <button>Search with Search Bar</button>
       </div>

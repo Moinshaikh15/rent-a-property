@@ -27,12 +27,13 @@ export default function Filters() {
 
   return (
     <div className="filters">
-      <div className="location-input">
+      <div className="input location-input">
         <p>Location</p>
         <input
           type="text"
           id="location"
           name="location"
+          placeholder="Search City"
           onFocus={() => dispatch(setShowCities())}
           onBlur={() =>
             setTimeout(() => {
@@ -53,7 +54,7 @@ export default function Filters() {
         </div>
       </div>
 
-      <div>
+      <div className="input ">
         <p>When</p>
         <input
           type="date"
@@ -63,7 +64,7 @@ export default function Filters() {
         />
       </div>
 
-      <div>
+      <div className="input">
         <p>Price</p>
         <h4>
           ${selectedPrice?.min}-${selectedPrice?.max}
@@ -78,7 +79,7 @@ export default function Filters() {
         />
       </div>
 
-      <div>
+      <div className="input">
         <p>Property Type</p>
         <select
           name="property-type"
@@ -91,7 +92,7 @@ export default function Filters() {
           <option value="shop">Shops</option>
         </select>
       </div>
-      <button onClick={() => dispatch(filterData())}>Search</button>
+      <button onClick={() => dispatch(filterData())} className="search-btn">Search</button>
     </div>
   );
 }
