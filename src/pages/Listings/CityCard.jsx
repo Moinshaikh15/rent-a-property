@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { setSelectedCity } from "../../redux/listings/listingsSlice";
+import { setSelectedCity, setShowCities } from "../../redux/listings/listingsSlice";
 
 export default function CityCard({ city }) {
   const dispatch = useDispatch();
@@ -9,18 +9,18 @@ export default function CityCard({ city }) {
     <div
       className="cityCard"
       onClick={(e) => {
-        e.preventDefault();
         dispatch(setSelectedCity(city));
+        dispatch(setShowCities(false));
       }}
     >
-      <div className="">
+      <div>
         <img
           src="/location.png"
           alt="location icon"
           className="location-icon"
         />
       </div>
-      <p className=""> {city}</p>
+      <p> {city}</p>
     </div>
   );
 }

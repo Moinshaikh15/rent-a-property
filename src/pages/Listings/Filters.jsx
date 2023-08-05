@@ -13,9 +13,16 @@ import {
 export default function Filters() {
   const dispatch = useDispatch();
   const [userInput, setUserInput] = useState("");
-  const { filteredCities, selectedCity, showCities, selectedPrice } =
-    useSelector((state) => state.listings);
+  const {
+    filteredCities,
+    selectedCity,
+    showCities,
+    selectedPrice,
+    selectedDate,
+  } = useSelector((state) => state.listings);
 
+
+  // handle location input change
   let handleLocationFilter = (e) => {
     dispatch(filterCities(e.target.value));
     setUserInput(e.target.value);
@@ -27,6 +34,7 @@ export default function Filters() {
 
   return (
     <div className="filters">
+      {/* Location Input */}
       <div className="input location-input">
         <p>Location</p>
         <input
@@ -34,36 +42,47 @@ export default function Filters() {
           id="location"
           name="location"
           placeholder="Search City"
-          onFocus={() => dispatch(setShowCities())}
+          onFocus={() => dispatch(setShowCities(true))}
           onBlur={() =>
+
             setTimeout(() => {
+              
               dispatch(setShowCities());
-            }, 220)
+              
+            }, 1000)
           }
           onChange={handleLocationFilter}
           value={userInput}
         />
 
+        {/* Show partially matched cities from input search */}
         <div
           className="cities"
           style={{ display: showCities ? "flex" : "none" }}
         >
           {filteredCities.map((city, indx) => (
-            <CityCard key={city + indx} city={city} />
+            <CityCard key={city + indx} city={city} /> // City Card shows city name
           ))}
         </div>
       </div>
 
-      <div className="input ">
+      {/* Date Input */}
+      <div className="input date-input">
         <p>When</p>
-        <input
-          type="date"
-          id="date"
-          name="date"
-          onChange={(e) => dispatch(setSelectedDates(e.target.value))}
-        />
+        <div className="date-box">
+          <span className="selected-date">
+            {selectedDate ? selectedDate : "Select Move-in Date"}
+          </span>
+          <input
+            type="date"
+            id="date"
+            name="date"
+            onChange={(e) => dispatch(setSelectedDates(e.target.value))}
+          />
+        </div>
       </div>
 
+      {/* Price Range input */}
       <div className="input">
         <p>Price</p>
         <h4>
@@ -72,13 +91,15 @@ export default function Filters() {
         <input
           type="range"
           min={500}
-          max={10000}
+          max={4000}
           onChange={(e) =>
             dispatch(setSelectedPrice({ max: e.target.value, min: 500 }))
           }
+          className="range-selector"
         />
       </div>
 
+      {/* Property Type selection input */}
       <div className="input">
         <p>Property Type</p>
         <select
@@ -92,7 +113,10 @@ export default function Filters() {
           <option value="shop">Shops</option>
         </select>
       </div>
-      <button onClick={() => dispatch(filterData())} className="search-btn">Search</button>
+
+      <button onClick={() => dispatch(filterData())} className="search-btn">
+        Search
+      </button>
     </div>
   );
 }

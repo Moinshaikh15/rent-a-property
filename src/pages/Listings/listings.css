@@ -22,6 +22,7 @@
   border: 1px solid var(--secondaryCol--);
 }
 
+/*          Search Filter       */
 .listings-page .filters {
   width: 100%;
   background-color: var(--secondaryBgCol--);
@@ -29,29 +30,27 @@
   justify-content: space-between;
   align-items: center;
   gap: 20px;
-  padding: 20px;
-  border-radius: 5px;
+  padding: 30px;
+  border-radius: 8px;
 }
 
 .location-input {
   position: relative;
 }
 .filters .input {
-  width: 20rem;
   height: 50px;
   border-right: 1px solid #e0def7;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
+  flex-grow: 1;
 }
 .filters .input p {
-  color: #9b9eab;
+  color: var(--secondaryTextCol--);
   font-size: 1.4rem;
 }
-.filters .location-input {
-  width: 24rem;
-}
+
 .filters .location-input input {
   width: 100%;
   padding: 5px 0;
@@ -73,6 +72,8 @@
   align-items: flex-start;
   background-color: var(--secondaryBgCol--);
   border-radius: 5px;
+  z-index: 2;
+  box-shadow: 2px 2px 4px 0px black;
 }
 .cityCard {
   display: flex;
@@ -82,21 +83,40 @@
   padding: 10px;
   cursor: pointer;
 }
+
 .cityCard .location-icon {
   width: 20px;
 }
 
-/* Hide the default arrow button */
-/* select {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  text-indent: 1px;
-  text-overflow: "";
-} */
+#date {
+  width: 24px;
+  height: 24px;
+  background-color: var(--secondaryCol--);
+  border: none;
+  outline: none;
+  color: var(--primaryCol--);
+  border-radius: 100%;
+}
+::-webkit-calendar-picker-indicator {
+  background-color: var(--secondaryCol--);
+  color: var(--primaryCol--);
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+.date-box {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 10px;
+}
+.selected-date {
+  margin-right: 14px;
+  font-weight: bold;
+}
 
 .input select {
-
   background-color: var(--secondaryBgCol--);
   border: none;
   padding: 8px 0;
@@ -107,28 +127,34 @@
   font-size: 1.6rem;
 }
 
-
 .input option {
   font-size: 1.6rem;
   color: #333;
   padding: 8px;
 }
 
+.range-selector {
+  height: 6px;
+}
 .filters .search-btn {
   width: 10rem;
   height: 50px;
   padding: 8px 12px;
   font-size: 1.6rem;
   border-radius: 5px;
-  color: var(--secondaryTextCol--);
+  color: white;
   background-color: var(--primaryCol--);
   border: none;
+  cursor: pointer;
 }
 
+/*             Property Listings       */
+
 .properties {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   align-items: flex-start;
   gap: 40px;
 }
@@ -136,10 +162,87 @@
 .property-card {
   background-color: var(--secondaryBgCol--);
   width: 360px;
-  height: 400px;
+  height: 420px;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
 
-.property-image {
+.property-card .property-image {
   width: 100%;
-  height: 220px;
+  height: 200px;
+  object-fit: cover;
+}
+.property-card .property-info-box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 20px;
+  position: relative;
+}
+
+.property-info-box .rent-box {
+  font-size: 1.4rem;
+  color: var(--secondaryTextCol--);
+}
+.property-info-box .rent {
+  color: var(--primaryCol--);
+  font-size: 2.6rem;
+  font-weight: 600;
+}
+.property-info-box .available-date {
+  color: var(--secondaryTextCol--);
+}
+.property-info-box .line {
+  height: 1px;
+  width: 100%;
+  background-color: #888b9b44;
+  margin: 10px 0;
+}
+.property-info-box .address {
+  width: 100%;
+  overflow-x: hidden;
+  color: var(--secondaryTextCol--);
+  white-space: nowrap;
+}
+
+.property-card .amenities {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.property-card .amenities div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  font-size: 1.4rem;
+  color: var(--secondaryTextCol--);
+}
+.property-card .amenities img {
+  width: 24px;
+}
+
+.property-info-box .add-to-favorite {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 10px;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  border: 1px solid var(--secondaryCol--);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.add-to-favorite img {
+  width: 22px;
 }

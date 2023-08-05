@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -10,9 +10,8 @@
   --bgCol--: #f7f7fd;
   --secondaryBgCol--: #ffffff;
   --textCol--: #000929;
-  --secondaryTextCol--: #ffffff;
+  --secondaryTextCol--: #888b9b;
 }
-
 
 html {
   font-size: 10px;
@@ -75,6 +74,7 @@ ol {
   align-items: center;
   padding: 20px 4vw;
   background-color: var(--secondaryBgCol--);
+  z-index: 4;
 }
 
 .navbar .menu-bar {
@@ -102,6 +102,11 @@ ol {
   padding: 6px 10px;
   border-radius: 5px;
 }
+.navbar .menu-bar .selected-menuItem {
+  background-color: var(--secondaryCol--);
+  color: var(--primaryCol--);
+  font-weight: 500;
+}
 .navbar .auth-btns {
   display: flex;
   justify-content: flex-end;
@@ -118,9 +123,10 @@ ol {
   background-color: var(--secondaryBgCol--);
   border: 2px solid var(--secondaryCol--);
   color: var(--primaryCol--);
+  font-weight: 500;
 }
 .navbar .auth-btns .signup-btn {
   background-color: var(--primaryCol--);
-  color: var(--secondaryTextCol--);
+  color: white;
   border: 1px solid var(--secondaryCol--);
 }

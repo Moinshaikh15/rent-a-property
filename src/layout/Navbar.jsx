@@ -10,7 +10,7 @@ export default function Navbar() {
         </span>
 
         <ul>
-          <li>Rent</li>
+          <li className="selected-menuItem">Rent</li>
           <li>Buy</li>
           <li>Sell</li>
           <li>Manage Property</li>

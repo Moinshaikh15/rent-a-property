@@ -55,8 +55,6 @@ const listingsSlice = createSlice({
 
         filterData: (state, filters) => {
             const { selectedCity, selectedDate, selectedPrice, selectedProperty } = state;
-            console.log("fileterData", selectedCity, selectedDate, selectedPrice, selectedProperty)
-
             state.filteredData = state.data.filter((item) => {
                 // Filter by location
                 const isLocationMatch =
@@ -77,6 +75,7 @@ const listingsSlice = createSlice({
 
                 return isLocationMatch && isMoveInDateMatch && isPriceInRange && isPropertyTypeMatch;
             });
+            console.log(state.filteredData)
 
         },
 
@@ -90,8 +89,8 @@ const listingsSlice = createSlice({
             state.selectedDate = action.payload;
 
         },
-        setShowCities: (state) => {
-            state.showCities = !state.showCities
+        setShowCities: (state,action) => {
+            state.showCities = action.payload
         },
 
         // setSelectedListing: (state, action) => {
