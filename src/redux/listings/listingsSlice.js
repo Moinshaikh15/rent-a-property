@@ -53,7 +53,7 @@ const listingsSlice = createSlice({
                 .slice(0, 5);
         },
 
-        filterData: (state, filters) => {
+        filterData: (state) => {
             const { selectedCity, selectedDate, selectedPrice, selectedProperty } = state;
             state.filteredData = state.data.filter((item) => {
                 // Filter by location
@@ -75,28 +75,21 @@ const listingsSlice = createSlice({
 
                 return isLocationMatch && isMoveInDateMatch && isPriceInRange && isPropertyTypeMatch;
             });
-            console.log(state.filteredData)
-
         },
 
         setSelectedCity: (state, action) => {
-
             state.selectedCity = action.payload;
-            // localStorage.setItem('selectedCity', action.payload);
         },
 
         setSelectedDates: (state, action) => {
             state.selectedDate = action.payload;
 
         },
-        setShowCities: (state,action) => {
+        setShowCities: (state, action) => {
             state.showCities = action.payload
         },
 
-        // setSelectedListing: (state, action) => {
-        //     state.selectedListing = action.payload;
-        //     localStorage.setItem('selectedListing', JSON.stringify(action.payload));
-        // },
+
         setSelectedPrice: (state, action) => {
             state.selectedPrice = action.payload
         },
@@ -115,8 +108,6 @@ export const {
     setShowCities,
     setSelectedPrice,
     setSelectedPropertyType
-    // setSelectedListing,
-    // setSelectedGuests
 } = listingsSlice.actions;
 
 export default listingsSlice.reducer;
